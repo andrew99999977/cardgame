@@ -1,0 +1,18 @@
+<h3>List of cards</h3>
+
+<div *ngFor="let card of cards">
+  <app-card-detail [card]="card"></app-card-detail>
+</div>
+
+<h1>Cards Manager</h1>
+<h4>ID:</h4>
+<input [(ngModel)]="id" />
+<h4>Number:</h4>
+<input [(ngModel)]="number" />
+<h4>Letter:</h4>
+<input [(ngModel)]="letter" />
+<br />
+<button type="button" (click)="addACard()">Add this card</button>
+<button type="button" (click)="deleteThisCard()">
+  Delete card with tis ID: {{ id }}
+</button>

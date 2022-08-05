@@ -1,0 +1,44 @@
+<div class="main-div">
+  <h1>Playground</h1>
+
+  <button type="button" *ngIf="!gameHasBeenStarted" (click)="startGame()">
+    Start Game
+  </button>
+
+  <div *ngIf="gameHasBeenStarted">
+    <h2 *ngIf="topCard" class="card">{{ topCard.id }}</h2>
+
+    <button
+      type="button"
+      (click)="moveIsDone()"
+      *ngIf="
+        (!isDrawingAnotherCardPossible && stackIsVisible) || moveHasBeenMade
+      "
+    >
+      Move is done
+    </button>
+
+    <button
+      type="button"
+      (click)="getAnotherCard()"
+      [disabled]="!isDrawingAnotherCardPossible || moveHasBeenMade"
+      *ngIf="stackIsVisible"
+    >
+      Draw a card
+    </button>
+
+    <h3>{{ currentPlayerString }}</h3>
+
+    <div class="card-stacks">
+      <div class="left-stack" *ngIf="stackIsVisible">
+        <div
+          class="card"
+          *ngFor="let card of cardsStack"
+          (click)="setTopCard(card)"
+        >
+          <h3>{{ card?.id }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

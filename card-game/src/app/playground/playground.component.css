@@ -1,0 +1,20 @@
+.card-stacks{
+    display:flex;
+    background-color: #a8dadc;
+}
+
+.card{
+    padding: 0.2rem;
+    margin: 0.2rem;
+    background-color: #f1faee;
+    max-width: 2rem;
+}
+
+.left-stack:active{
+    cursor:grabbing;
+}
+
+.main-div{
+    background-color: #2a9d8f;
+}
+

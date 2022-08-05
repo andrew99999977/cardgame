@@ -1,0 +1,13 @@
+<p>current-view works!</p>
+
+<h2>Player 1 cards</h2>
+<div *ngFor="let card of leftCards">{{ card.id }}</div>
+
+<h2>Player 2 cards</h2>
+<div *ngFor="let card of rightCards">{{ card.id }}</div>
+
+<h2>Used cards</h2>
+<div *ngFor="let card of usedCards">{{ card.id }}</div>
+
+<h2>Unused cards</h2>
+<div *ngFor="let card of unusedCards">{{ card.id }}</div>
